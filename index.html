@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="./css/main.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-   crossorigin=""/>
-
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <link rel="stylesheet" type="css" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
   <title>IP Address Tracker</title>
 </head>
+
 <body>
-  <main>
-    <header>
-      <h1>IP Address Tracker</h1>
-      <h2>Search for any IP address or domain</h2>
+    <header class="search">
+      <h1 class="search__title">IP Address Tracker</h1>
+      <form name="searchform" class="search__form">
+        <label for="Search" aria-hidden="true">Search Ip Address or Domain</label>
+          <input class="search__input" name="search" type="search" name="Search" value=""
+            placeholder="Search by IP Address or Domain">
+          <button class="search__button" type="submit" aria-label="Search Button"></button>
+      </form>
+      <dl class="datazone">
+        
+      </dl>
     </header>
-    IP Address
-    Location
-    Timezone
-      UTC
-    ISP
-    <!-- <span><img src="./images/icon-search.svg" alt="search icon" width="30rem"></span> -->
-  </main>
+    <div id="mapid"></div>
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-  crossorigin=""></script>
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
   <script src="./js/index.js"></script>
 </body>
+
 </html>
