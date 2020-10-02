@@ -1,0 +1,41 @@
+{
+  "name": "IP-Address-Tracker",
+  "version": "1.0.0",
+  "description": "- [] Should be able to view the optimal layout on whatever device they use\r - [] See hover states for all interactive elements on the page\r - [] See their own IP address on the map\r - [] Search for any IP addresses or domains and see key info and location",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.dev.js --open",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timegated/IP-Address-Tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timegated/IP-Address-Tracker/issues"
+  },
+  "homepage": "https://github.com/timegated/IP-Address-Tracker#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^4.2.1",
+    "file-loader": "^6.0.0",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.14.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "sass-loader": "^9.0.3",
+    "style-loader": "^1.2.1",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.1.1"
+  },
+  "dependencies": {
+    "axios": "^0.20.0"
+  }
+}
