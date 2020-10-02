@@ -13,19 +13,35 @@
 </head>
 
 <body>
+  <main>
     <header class="search">
       <h1 class="search__title">IP Address Tracker</h1>
       <form name="searchform" class="search__form">
-        <label for="Search" aria-hidden="true">Search Ip Address or Domain</label>
+        <label for="Search" aria-hidden="true">Enter Address or Domain</label>
           <input class="search__input" name="search" type="search" name="Search" value=""
             placeholder="Search by IP Address or Domain">
           <button class="search__button" type="submit" aria-label="Search Button"></button>
       </form>
       <dl class="datazone">
-        
+        <div class="datazone__item">
+          <dt class="datazone__title">IP Address</dt>
+          <dd class="datazone__value">Data</dd>
+        </div>
+        <div class="datazone__item">
+          <dt class="datazone__title">Location</dt>
+          <dd class="datazone__value">Data</dd>
+        </div>
+        <div class="datazone__item">
+          <dt class="datazone__title">Timezone</dt>
+          <dd class="datazone__value">Data</dd>
+        </div>
+        <div class="datazone__item">
+          <dt class="datazone__title">ISP</dt>
+          <dd class="datazone__value">Data</dd>
+        </div>
       </dl>
     </header>
-    <div id="mapid"></div>
+  </main>
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin=""></script>
