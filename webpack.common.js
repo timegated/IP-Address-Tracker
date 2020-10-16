@@ -1,10 +1,8 @@
 const path = require("path");
-var HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: {
-    main: "./src/js/index.js",
-  },
+  entry: ['babel-polyfill', "./src/js/index.js"],
   module: {
     rules: [
       {
@@ -21,6 +19,19 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        }
+      },
     ],
+  },
+  node: {
+    fs: 'empty'
   },
 };
