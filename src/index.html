@@ -5,11 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+  integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+  crossorigin=""/>
   <title>IP Address Tracker</title>
 </head>
 <body>
   <main>
-    <header class="search">
+    <header class="search" role="search">
       <h1 class="search__title">IP Address Tracker</h1>
       <form name="searchform" class="search__form">
         <label for="Search" aria-hidden="true">Enter Address or Domain</label>
@@ -37,6 +40,6 @@
       </dl>
     </header>
   </main>
-  <div class="map" id="mapid"></div>
+  <div class="map" id="map"></div>
 </body>
 </html>

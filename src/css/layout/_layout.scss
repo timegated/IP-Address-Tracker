@@ -1,6 +1,5 @@
 main {
   display: flex;
-  // overflow: hidden;
   position: relative;
   flex-direction: column;
 
@@ -9,9 +8,10 @@ main {
     text-align: center;
     position: relative;
     padding-bottom: 150px;
+    height: 450px;
 
     &__title {
-      margin-bottom: 1.5rem;
+     margin: 1.5rem 0 1.5rem 0;
     }
 
     &__form {
@@ -72,3 +72,11 @@ main {
   }
 
 };
+
+
+.map {
+  height: 800px;
+  width: 100%;
+  position: relative;
+  max-width: 100%;
+}
