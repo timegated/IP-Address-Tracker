@@ -1,23 +1,21 @@
 import axios from 'axios';
-import dotenv from 'dotenv';
 import { UI } from '../ui/ui';
 
-dotenv.config();
+
 // Used to grab value of user inputs for use in the http request
 
 const ui = new UI();
 
-console.log('Instantiating UI in ipify.js', ui);
-
-export const ipSearch = async () => {
-  const apiURL = 'https://geo.ipify.org/api/v1';
-  const key = `apiKey=${ process.env.IPIFY_API_KEY }`;
-  const ip = '8.8.8.8';
+export const ipSearch = async (e) => {
+  e.preventDefault()
+  const apiURL = 'https://geo.ipify.org/api/v1?';
+  const key = `apiKey=at_jV69a6mZ1tpGAStRl8hAnhEU8BBlm`;
+  const ip = ui.getSearchValue();
   try {
     const response = await axios.get(`${apiURL}${key}&domain=${ip}`);
     console.log(response);
   } catch (error) {
-    console.error('Some bad shit happened');
+    console.log('Status: 500', 'Something is amiss with the request');
   }
 };
 

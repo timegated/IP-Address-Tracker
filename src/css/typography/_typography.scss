@@ -9,6 +9,10 @@ p, aside, em, strong, b, dt, dd, dl, div {
   font-weight: $font-weight-1;
 }
 
+.search__input {
+  font-size: 18px;
+}
+
 .datazone__title {
   font-size: $font-size-default;
   font-weight: $font-weight-3;
