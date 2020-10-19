@@ -1,5 +1,4 @@
 import '../css/main.scss';
-import { createMap } from './api/map.js';
 import { ipSearch } from './api/ipify.js';
 import { UI } from './ui/ui.js';
 import bgPattern from '../images/pattern-bg.png';
@@ -20,5 +19,10 @@ const addImg = (element, imgURL, styleRule, ruleValue) => {
 
 addImg(searchContainer, bgPattern, 'background-size', 'cover');
 addImg(searchButton, searchButtonIcon, 'background-position', 'center');
-createMap(mapContainer);
-searchForm.addEventListener('submit', ipSearch);
+
+ipSearch()
+
+searchForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  ipSearch()
+});
