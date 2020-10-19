@@ -6,7 +6,7 @@ import { UI } from '../ui/ui';
 
 const ui = new UI();
 const dataValues = Array.from(ui.dataValues);
-console.log(dataValues);
+
 export const ipSearch = async (e) => {
   e.preventDefault()
   const apiURL = 'https://geo.ipify.org/api/v1?';

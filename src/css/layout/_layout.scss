@@ -7,8 +7,7 @@ main {
     width: 100%;
     text-align: center;
     position: relative;
-    padding-bottom: 150px;
-    height: 450px;
+    height: 350px;
 
     &__title {
      margin: 1.5rem 0 1.5rem 0;
@@ -29,14 +28,14 @@ main {
 
     &__input {
       padding: 1rem;
-      width: 960px;
+      width: 50%;
       min-width: 30%;
       border: none;
       border-radius: 10px 0 0 10px;
     }
 
     &__button {
-      flex: 0 0 5%;
+      flex: 0 0 10%;
       border: none;
       border-radius: 0 10px 10px 0;
       cursor: pointer;
@@ -50,27 +49,36 @@ main {
   justify-content: flex-start;
   flex-flow: column nowrap;
   margin: auto;
-  position: absolute;
+  position: relative;
   background-color: $white;
   border-radius: 30px;
   padding: 1.5rem;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  margin: auto;
+  margin-top: 30px;
   width: 75%;
   max-width: 90vw;
-  transform: translateY(50%);
   z-index: 999;
   @media (min-width: 1440px) {
     flex-flow: row nowrap;
   }
+  // @media (max-width: 1440px) {
+  //   height: 250px;
+  // }
 
   &__item {
     flex: 0 1 25%;
     padding: 3.5rem;
     text-align: left;
+    border-right: 2px solid $dark-grey;
+    @media (max-width: 1440px) {
+      border: none;
+      padding: none;
+      flex: 0 1 5%;
+    }
   }
-
+  &__item:last-child {
+    border: none;
+  }
 };
 
 
