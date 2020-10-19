@@ -5,6 +5,7 @@ export class UI {
     this.searchForm = document.querySelector('.search__form');
     this.searchButton = document.querySelector('.search__button');
     this.mapContainer = document.querySelector('#map');
+    this.dataValues = document.querySelectorAll('.datazone__value');
   }
 
   getSearchValue() {

@@ -6,7 +6,7 @@ p, aside, em, strong, b, dt, dd, dl, div {
   font-family: 'Rubik', sans-serif;
   font-size: $font-size-medium;
   color: $white;
-  font-weight: $font-weight-1;
+  font-weight: 700;
 }
 
 .search__input {
@@ -20,6 +20,7 @@ p, aside, em, strong, b, dt, dd, dl, div {
 }
 
 .datazone__value {
-  font-size: $font-size-medium;
+  font-size: $font-size-alt;
   color: $very-dark-grey;
+  font-weight: 600;
 }
