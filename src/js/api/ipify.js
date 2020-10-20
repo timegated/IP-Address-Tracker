@@ -15,7 +15,6 @@ export const ipSearch = async () => {
   try {
 
     const response = await axios.get(`${apiURL}${key}&domain=${ip}`);
-    console.log(response)
     ui.displayData(response.data.ip, response.data.location.city, response.data.location.city, response.data.location.postalCode, response.data.location.timezone, response.data.isp)
 
     map = L.map('mapId').setView([response.data.location.lat, response.data.location.lng], 13);
@@ -23,7 +22,9 @@ export const ipSearch = async () => {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       noWrap: true,
     }).addTo(map);
+
     L.marker([response.data.location.lat, response.data.location.lng]).addTo(map);
+
     map.panTo(new L.LatLng(response.data.location.lat, response.data.location.lng));
 
   } catch (error) {

@@ -33,7 +33,9 @@ module.exports = {
     ],
   },
   plugins: [
-    new Dotenv()
+    new Dotenv({
+      systemvars: true
+    })
   ],
   node: {
     fs: 'empty'

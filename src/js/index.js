@@ -24,5 +24,6 @@ ipSearch()
 
 searchForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  ipSearch()
+  ipSearch();
+  console.log('Form Submitted')
 });
