@@ -20,6 +20,7 @@ const addImg = (element, imgURL, styleRule, ruleValue) => {
 addImg(searchContainer, bgPattern, 'background-size', 'cover');
 addImg(searchButton, searchButtonIcon, 'background-position', 'center');
 
+ipSearch();
 
 searchForm.addEventListener('submit', (e) => {
   e.preventDefault();
