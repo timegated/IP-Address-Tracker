@@ -1,34 +1,28 @@
 import axios from 'axios';
 import { UI } from '../ui/ui';
-import L from 'leaflet';
-
+import { createMap } from './map';
 // Used to grab value of user inputs for use in the http request
 
-const ui = new UI();
-let map = ui.mapContainer;
-
 export const ipSearch = async () => {
+  const ui = new UI();
+  let map = ui.mapContainer;
+  let ipmap = ui.ipMap;
   const apiURL = 'https://geo.ipify.org/api/v1?';
   const key = `apiKey=${process.env.IPIFY_API_KEY}`;
-  const ip = ui.getSearchValue();
+  const inputValue = ui.getSearchValue();
 
   try {
+    const res = await axios.get(`${apiURL}${key}&domain=${inputValue}`);
 
-    const response = await axios.get(`${apiURL}${key}&domain=${ip}`);
-    ui.displayData(response.data.ip, response.data.location.city, response.data.location.region, response.data.location.postalCode, response.data.location.timezone, response.data.isp)
+    const { lat, lng, city, region, postalCode, timezone } = res.data.location;
+    const { ip, isp } = res.data;
 
-    map = L.map('mapId').setView([response.data.location.lat, response.data.location.lng], 13);
-    L.tileLayer('https://c.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      noWrap: true,
-    }).addTo(map);
+    ui.displayData(ip, city, region, postalCode, timezone, isp)
 
-    L.marker([response.data.location.lat, response.data.location.lng]).addTo(map);
-
-    map.panTo(new L.LatLng(response.data.location.lat, response.data.location.lng));
+    createMap(ipmap, map, lat, lng);
 
   } catch (error) {
-    console.log('Status: 500', 'Something is amiss with the request');
+    console.error(error.message);
   }
 };
 

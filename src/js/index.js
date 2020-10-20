@@ -7,7 +7,7 @@ import searchButtonIcon from '../images/icon-search.svg';
 
 const ui = new UI();
 
-const { searchContainer, searchButton, mapContainer, searchForm } = ui;
+const { searchContainer, searchButton, searchForm } = ui;
 
 const addImg = (element, imgURL, styleRule, ruleValue) => {
   return element.style = `
@@ -20,10 +20,8 @@ const addImg = (element, imgURL, styleRule, ruleValue) => {
 addImg(searchContainer, bgPattern, 'background-size', 'cover');
 addImg(searchButton, searchButtonIcon, 'background-position', 'center');
 
-ipSearch()
 
 searchForm.addEventListener('submit', (e) => {
   e.preventDefault();
   ipSearch();
-  console.log('Form Submitted')
 });
